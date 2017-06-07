@@ -27,6 +27,7 @@
 extern "C" {
 #endif
 
+#ifndef SHA1DC_NO_STANDARD_INCLUDES
 #include <stdint.h>
 #endif
 
@@ -44,4 +45,8 @@ void ubc_check(const uint32_t W[80], uint32_t dvmask[DVMASKSIZE]);
 }
 #endif
 
-#endif /* UBC_CHECK_H */
+#ifdef SHA1DC_CUSTOM_TRAILING_INCLUDE_UBC_CHECK_H
+#include SHA1DC_CUSTOM_TRAILING_INCLUDE_UBC_CHECK_H
+#endif
+
+#endif
